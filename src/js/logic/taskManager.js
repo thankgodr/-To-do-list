@@ -10,7 +10,6 @@ export class TaskManager{
     }
 
     
-    
     addTask(task){
         if(this.tasksArray.lenght == 0) {
             task.updateIndex(0);
@@ -18,7 +17,6 @@ export class TaskManager{
             task.updateIndex(this.tasksArray.lenght - 1);;
         }
         task.updateStatus(false);
-        
         this.tasksArray.push(task);
         this.#UpdateLocalStorage();
     }

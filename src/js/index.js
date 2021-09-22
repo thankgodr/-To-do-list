@@ -15,13 +15,23 @@ function printInitialTasks(){
     taskManager = new TaskManager(savedTasked);
     taskManager.tasksArray.forEach(task => {
         let listViewItem = document.createElement('li');
-        var checkbox = document.createElement('input');
-        checkbox.type = "checkbox";
-        checkbox.name = "name";
+        listViewItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = 'name';
+        checkbox.className = 'form-check-input pull-left';
+        checkbox.style.marginRight = '17px';
         checkbox.value = task.completed;
+
+        let span = document.createElement('span');
+        span.className = 'fas fa-ellipsis-v pull-right'
+
         listViewItem.appendChild(checkbox);
-        listViewItem.appendChild(document.createTextNode(task.description));
+        listViewItem.appendChild(document.createTextNode(task.description + "  "));
+        listViewItem.appendChild(span);
         taskList.appendChild(listViewItem);
+        
     });
 }
 printInitialTasks();
