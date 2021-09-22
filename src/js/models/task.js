@@ -1,15 +1,23 @@
 export  class Task{
-    #status_completed = false
-    constructor(name){
-        this.name = name;
+    completed = false;
+    description;
+    index;
+    constructor(description){
+        this.description = description;
     }
 
-    updateStatus(status){
-        this.#status_completed = status;
+    updateStatus(status = false){
+        this.completed = status;
     }
+
+    updateIndex(index){
+        this.index =index;
+    }
+
+    
 
     taskStatus(){
-        return this.#status_completed;
+    return this.completed;
     }
 
 }
