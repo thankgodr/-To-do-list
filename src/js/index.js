@@ -40,6 +40,22 @@ function printInitialTasks() {
     checkbox.className = 'form-check-input pull-left';
     checkbox.style.marginRight = '17px';
     checkbox.value = task.completed;
+    if (task.completed) {
+      checkbox.checked = true;
+    }
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        console.log('ischecked');
+        task.completed = true;
+        taskManager.updateALL();
+        console.log(task.completed);
+      } else {
+        console.log('not checked');
+        task.completed = false;
+        taskManager.updateALL();
+        console.log(task.completed);
+      }
+    });
 
     const span = document.createElement('span');
     span.className = 'fas fa-ellipsis-v pull-right';
