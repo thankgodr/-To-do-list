@@ -22,4 +22,7 @@ module.exports = {
         template: './src/index.html'
     }),
   ],
+  devServer: {
+    static: './dist',
+  },
 };

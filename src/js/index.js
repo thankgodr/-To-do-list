@@ -2,12 +2,12 @@ import { TaskManager } from './logic/taskManager';
 import { Task } from './models/task';
 import '../css/style.css';
 
-var taskManager = null;
+let taskManager = null;
 
-function printInitialTasks(){
+function printInitialTasks() {
     console.log("PrintTask was called");
     let savedTasked = JSON.parse(localStorage.getItem('taskDbKey'));
-    if(savedTasked == null){
+    if(savedTasked == null) {
         savedTasked = [];
     }
     const taskList = document.getElementById('taskList');
@@ -25,8 +25,7 @@ function printInitialTasks(){
         checkbox.value = task.completed;
 
         let span = document.createElement('span');
-        span.className = 'fas fa-ellipsis-v pull-right'
-
+        span.className = 'fas fa-ellipsis-v pull-right';
         listViewItem.appendChild(checkbox);
         listViewItem.appendChild(document.createTextNode(task.description + "  "));
         listViewItem.appendChild(span);
