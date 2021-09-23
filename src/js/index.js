@@ -4,6 +4,20 @@ import '../css/style.css';
 
 let taskManager = null;
 
+function demoData() {
+  const singleTask = new Task('Do action one');
+  singleTask.index = 0;
+  taskManager.addTask(singleTask);
+
+  const singleTask1 = new Task('Do action two');
+  singleTask1.index = taskManager.tasksArray.lenght;
+  taskManager.addTask(singleTask1);
+
+  const singleTask2 = new Task('Do action three');
+  singleTask2.index = taskManager.tasksArray.lenght;
+  taskManager.addTask(singleTask2);
+}
+
 function printInitialTasks() {
   let savedTasked = JSON.parse(localStorage.getItem('taskDbKey'));
   if (savedTasked == null) {
@@ -12,6 +26,9 @@ function printInitialTasks() {
   const taskList = document.getElementById('taskList');
   taskList.innerHTML = '';
   taskManager = new TaskManager(savedTasked);
+  if (savedTasked.length == 0) {
+    demoData();
+  }
   taskManager.tasksArray.forEach((task) => {
     const listViewItem = document.createElement('li');
     listViewItem.className = 'list-group-item d-flex justify-content-between align-items-center';
