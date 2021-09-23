@@ -14,8 +14,7 @@ function printInitialTasks() {
   taskManager = new TaskManager(savedTasked);
   taskManager.tasksArray.forEach((task) => {
     const listViewItem = document.createElement('li');
-    listViewItem.className =
-      'list-group-item d-flex justify-content-between align-items-center';
+    listViewItem.className = 'list-group-item d-flex justify-content-between align-items-center';
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
