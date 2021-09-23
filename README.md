@@ -2,11 +2,9 @@
 
 # Todo List
 
-> One paragraph statement about the project.
+> To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ![screenshot](screenshot/view.png)
-
-Additional description about the project and its features.
 
 ## Built With
 
@@ -19,22 +17,17 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
+- Node
+- NPM
 
 ### Deployment
+
+- run "npm start" from terminal
+- open http://localhost:8080/ on ur browser
 
 ## Authors
 
