@@ -33,8 +33,8 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **ThankGod Richard**
 
-- GitHub: [@githubhandle](https://github.com/thankgodr)
-- Twitter: [@twitterhandle](https://twitter.com/madueketf)
+- GitHub: [@thankgodr](https://github.com/thankgodr)
+- Twitter: [@madueketf](https://twitter.com/madueketf)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/thankgodr)
 
 ## 🤝 Contributing
