@@ -61,9 +61,7 @@ function printInitialTasks() {
 printInitialTasks();
 
 function removeALlCompleted() {
-  const tempArr = taskManager.tasksArray.filter((task) => {
-    return !task.completed;
-  });
+  const tempArr = taskManager.tasksArray.filter((task) => !task.completed);
   taskManager.tasksArray = tempArr;
   taskManager.updateALL();
   printInitialTasks();
