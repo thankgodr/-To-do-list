@@ -1,23 +1,20 @@
-export  class Task{
-    completed = false;
-    description;
-    index;
-    constructor(description){
-        this.description = description;
-    }
+export default class Task {
+  completed = false;
+  description;
+  index;
+  constructor(description) {
+    this.description = description;
+  }
 
-    updateStatus(status = false){
-        this.completed = status;
-    }
+  updateStatus(status = false) {
+    this.completed = status;
+  }
 
-    updateIndex(index){
-        this.index =index;
-    }
+  updateIndex(index) {
+    this.index = index;
+  }
 
-    
-
-    taskStatus(){
+  taskStatus() {
     return this.completed;
-    }
-
+  }
 }

@@ -10,7 +10,7 @@ export default class TaskManager {
   }
 
   addTask(task) {
-    if (this.tasksArray.lenght == 0) {
+    if (this.tasksArray.lenght === 0) {
       task.updateIndex(0);
     } else {
       task.updateIndex(this.tasksArray.lenght - 1);
@@ -19,6 +19,7 @@ export default class TaskManager {
     this.tasksArray.push(task);
     this.#UpdateLocalStorage();
   }
+
   removeTask(taskIndex) {
     this.tasksArray.splice(taskIndex, 1);
     this.#UpdateLocalStorage();
