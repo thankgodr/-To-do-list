@@ -8,10 +8,6 @@ This project is a simple HTML list of To Do tasks. The list will be styled accor
 
 - HTML, JavaScript(Webpack) & CSS
 
-## Live Demo
-
-[Live Demo Link](https://thangodr.github.io/todolist/)
-
 
 ## Authors
 
