@@ -6,7 +6,6 @@ let taskManager = null;
 
 function deleteTask(deleteIndex) {
   taskManager.removeTask(deleteIndex);
-  printInitialTasks();
 }
 
 function printInitialTasks() {
@@ -50,6 +49,7 @@ function printInitialTasks() {
     span.className = 'fas fa-ellipsis-v pull-right';
     span.addEventListener('click', () => {
       deleteTask(loopIndex);
+      printInitialTasks();
     });
 
     listViewItem.appendChild(checkbox);
