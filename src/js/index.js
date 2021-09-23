@@ -4,6 +4,11 @@ import '../css/style.css';
 
 let taskManager = null;
 
+function deleteTask(deleteIndex) {
+  taskManager.removeTask(deleteIndex);
+  printInitialTasks();
+}
+
 function printInitialTasks() {
   let savedTasked = JSON.parse(localStorage.getItem('taskDbKey'));
   if (savedTasked == null) {
@@ -55,13 +60,8 @@ function printInitialTasks() {
 }
 printInitialTasks();
 
-function deleteTask(deleteIndex) {
-  taskManager.removeTask(deleteIndex);
-  printInitialTasks();
-}
-
 function removeALlCompleted() {
-  let tempArr = taskManager.tasksArray.filter((task) => {
+  const tempArr = taskManager.tasksArray.filter((task) => {
     return !task.completed;
   });
   taskManager.tasksArray = tempArr;
