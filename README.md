@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+Not available
 
 ## Getting Started
 
