@@ -1,35 +1,35 @@
-import { TaskManager } from "./logic/taskManager";
-import { Task } from "./models/task";
-import "../css/style.css";
+import { TaskManager } from './logic/taskManager';
+import { Task } from './models/task';
+import '../css/style.css';
 
 let taskManager = null;
 
 function printInitialTasks() {
-  console.log("PrintTask was called");
-  let savedTasked = JSON.parse(localStorage.getItem("taskDbKey"));
+  console.log('PrintTask was called');
+  let savedTasked = JSON.parse(localStorage.getItem('taskDbKey'));
   if (savedTasked == null) {
     savedTasked = [];
   }
-  const taskList = document.getElementById("taskList");
-  taskList.innerHTML = "";
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
   taskManager = new TaskManager(savedTasked);
   taskManager.tasksArray.forEach((task) => {
-    let listViewItem = document.createElement("li");
+    let listViewItem = document.createElement('li');
     listViewItem.className =
-      "list-group-item d-flex justify-content-between align-items-center";
+      'list-group-item d-flex justify-content-between align-items-center';
 
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "name";
+    let checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.name = 'name';
 
-    checkbox.className = "form-check-input pull-left";
-    checkbox.style.marginRight = "17px";
+    checkbox.className = 'form-check-input pull-left';
+    checkbox.style.marginRight = '17px';
     checkbox.value = task.completed;
 
-    let span = document.createElement("span");
-    span.className = "fas fa-ellipsis-v pull-right";
+    let span = document.createElement('span');
+    span.className = 'fas fa-ellipsis-v pull-right';
     listViewItem.appendChild(checkbox);
-    listViewItem.appendChild(document.createTextNode(task.description + "  "));
+    listViewItem.appendChild(document.createTextNode(task.description + '  '));
     listViewItem.appendChild(span);
     taskList.appendChild(listViewItem);
   });
@@ -46,13 +46,13 @@ function deleteTask(taskIndex) {
   taskManager.deleteTask(taskIndex);
 }
 
-document.addEventListener("keyup", function (event) {
+document.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
-    const inputTitle = document.getElementById("newTask");
+    const inputTitle = document.getElementById('newTask');
     addTask(inputTitle.value);
-    console.log("Key was pressed");
+    console.log('Key was pressed');
     printInitialTasks();
   } else {
-    console.log("tesdkkdf");
+    console.log('tesdkkdf');
   }
 });
