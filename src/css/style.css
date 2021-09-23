@@ -1,0 +1,12 @@
+#taskList {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.center {
+  border: solid 1px #000;
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px;
+}
