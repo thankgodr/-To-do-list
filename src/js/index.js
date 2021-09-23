@@ -26,7 +26,7 @@ function printInitialTasks() {
   const taskList = document.getElementById('taskList');
   taskList.innerHTML = '';
   taskManager = new TaskManager(savedTasked);
-  if (savedTasked.length == 0) {
+  if (savedTasked.length === 0) {
     demoData();
   }
   taskManager.tasksArray.forEach((task) => {
