@@ -1,7 +1,10 @@
 export default class Task {
   completed = false;
+
   description;
+
   index;
+
   constructor(description) {
     this.description = description;
   }
