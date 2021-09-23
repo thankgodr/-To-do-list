@@ -26,4 +26,8 @@ export default class TaskManager {
     this.tasksArray.splice(taskIndex, 1);
     this.#UpdateLocalStorage();
   }
+
+  updateALL() {
+    this.#UpdateLocalStorage();
+  }
 }
