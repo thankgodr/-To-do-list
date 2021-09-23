@@ -1,5 +1,5 @@
-import { TaskManager } from './logic/taskManager';
-import { Task } from './models/task';
+import TaskManager from './logic/taskManager';
+import Task from './models/task';
 import '../css/style.css';
 
 let taskManager = null;
@@ -44,9 +44,7 @@ document.addEventListener('keyup', (event) => {
   if (event.keyCode === 13) {
     const inputTitle = document.getElementById('newTask');
     addTask(inputTitle.value);
-    console.log('Key was pressed');
+
     printInitialTasks();
-  } else {
-    console.log('tesdkkdf');
   }
 });
