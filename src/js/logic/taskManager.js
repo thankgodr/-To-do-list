@@ -6,14 +6,17 @@ export default class TaskManager {
   }
 
   #UpdateLocalStorage() {
+    this.tasksArray.forEach((tmtask, tmindex) => {
+      tmtask.index = tmindex + 1;
+    });
     localStorage.setItem('taskDbKey', JSON.stringify(this.tasksArray));
   }
 
   addTask(task) {
     if (this.tasksArray.lenght === 0) {
-      task.updateIndex(0);
+      task.updateIndex(1);
     } else {
-      task.updateIndex(this.tasksArray.lenght - 1);
+      task.updateIndex(this.tasksArray.lenght);
     }
     task.updateStatus(false);
     this.tasksArray.push(task);
