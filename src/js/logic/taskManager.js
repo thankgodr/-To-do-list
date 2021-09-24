@@ -28,6 +28,11 @@ export default class TaskManager {
     this.#UpdateLocalStorage();
   }
 
+  updateSingleTask(task, taskIndex) {
+    this.tasksArray[taskIndex] = task;
+    this.#UpdateLocalStorage();
+  }
+
   updateALL() {
     this.#UpdateLocalStorage();
   }

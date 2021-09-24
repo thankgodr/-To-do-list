@@ -44,17 +44,36 @@ function printInitialTasks() {
         console.log(task.completed);
       }
     });
-
-    const span = document.createElement('span');
-    span.className = 'fas fa-ellipsis-v pull-right';
-    span.addEventListener('click', () => {
+    const deleteBtn = document.createElement('span');
+    deleteBtn.className = 'fas fa-trash pull-right delete';
+    deleteBtn.addEventListener('click', () => {
       deleteTask(loopIndex);
       printInitialTasks();
     });
 
+    const span = document.createElement('span');
+    span.className = 'fas fa-ellipsis-v pull-right';
+    span.addEventListener('click', () => {});
+
+    const pTag = document.createElement('span');
+    pTag.contentEditable = true;
+    pTag.appendChild(document.createTextNode(task.description));
+    document.addEventListener('keypress', (event) => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        if (document.activeElement === pTag) {
+          task.description = pTag.innerText;
+          taskManager.updateSingleTask(task, loopIndex);
+          pTag.contentEditable = false;
+          pTag.contentEditable = true;
+        }
+      }
+    });
+
     listViewItem.appendChild(checkbox);
-    listViewItem.appendChild(document.createTextNode(task.description));
+    listViewItem.appendChild(pTag);
     listViewItem.appendChild(span);
+    listViewItem.appendChild(deleteBtn);
     taskList.appendChild(listViewItem);
   });
 }
@@ -78,10 +97,12 @@ document.getElementById('clearCompleted').addEventListener('click', () => {
 });
 
 document.addEventListener('keyup', (event) => {
-  if (event.keyCode === 13) {
-    const inputTitle = document.getElementById('newTask');
-    addTask(inputTitle.value);
-
-    printInitialTasks();
+  const inputTitle = document.getElementById('newTask');
+  if (document.activeElement === inputTitle) {
+    if (event.keyCode === 13) {
+      addTask(inputTitle.value);
+      inputTitle.value = '';
+      printInitialTasks();
+    }
   }
 });

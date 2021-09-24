@@ -20,4 +20,8 @@ export default class Task {
   taskStatus() {
     return this.completed;
   }
+
+  updateDescription(des) {
+    this.description = des;
+  }
 }
