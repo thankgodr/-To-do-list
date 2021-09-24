@@ -33,15 +33,11 @@ function printInitialTasks() {
     }
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
-        console.log('ischecked');
         task.completed = true;
         taskManager.updateALL();
-        console.log(task.completed);
       } else {
-        console.log('not checked');
         task.completed = false;
         taskManager.updateALL();
-        console.log(task.completed);
       }
     });
     const deleteBtn = document.createElement('span');
